@@ -1,0 +1,118 @@
+@tailwind base;
+
+
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+
+
+    ::-webkit-scrollbar-track {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .quill-container .ql-container {
+        border-bottom-left-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        background: #ffffff;
+    }
+
+    /* Snow Theme */
+    .quill-container .ql-snow.ql-toolbar {
+        display: block;
+        background: #dadada;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+
+    .detail-section {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 300ms, transform 300ms;
+    }
+
+    .job-details-header {
+        height: calc((100vh - 70px) * 0.35)
+    }
+
+    .job-details-body {
+        height: calc((100vh - 70px) * 0.65)
+    }
+
+    .hero-bg {
+        background: hsla(0, 3%, 88%, 1);
+
+        background: radial-gradient(circle, hsla(0, 3%, 88%, 1) 0%, hsla(0, 0%, 65%, 1) 100%);
+
+        background: -moz-radial-gradient(circle, hsla(0, 3%, 88%, 1) 0%, hsla(0, 0%, 65%, 1) 100%);
+
+        background: -webkit-radial-gradient(circle, hsla(0, 3%, 88%, 1) 0%, hsla(0, 0%, 65%, 1) 100%);
+
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#E1DFDF", endColorstr="#A7A7A7", GradientType=1);
+    }
+
+    .quill.ql-error .ql-toolbar {
+        @apply border-t-2 border-l-2 border-r-2 border-red-600/30
+    }
+
+    .quill.ql-error .ql-container {
+        @apply border-b-2 border-l-2 border-r-2 border-red-600/30 bg-red-300/5
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+
+    }
+
+    /* Style for the slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 10px;
+
+    }
+
+    /* Style for the circle (knob) inside the slider */
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 3px;
+        bottom: 1px;
+        border-radius: 50%;
+        background-color: white;
+        transition: 0.4s;
+    }
+    .custom-placeholder::placeholder {
+        font-size: 200px; /* Set your desired font size here */
+        /* You can also apply other styling properties as needed */
+      }
+    /* Change the background color of the switch when it's checked */
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    /* Move the circle (knob) to the right when the switch is checked */
+    input:checked + .slider:before {
+        transform: translateX(22px);
+    }
+
+    /* Hide the default checkbox input */
+    .active-switch {
+        display: none;
+    }
+
+}
